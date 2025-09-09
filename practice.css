@@ -1,0 +1,160 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #0b0c10;
+  color: #ffffff;
+}
+
+header {
+  background-color: #1f2833;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  border-bottom: 2px solid #45a29e;
+}
+
+header .logo {
+  display: flex;
+  align-items: center;
+}
+
+header .logo img {
+  height: 50px;
+  margin-right: 1rem;
+}
+
+header h1 {
+  font-size: 1.5rem;
+  color: #66fcf1;
+}
+
+nav a {
+  margin-left: 1.5rem;
+  text-decoration: none;
+  color: #c5c6c7;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: #66fcf1;
+}
+
+.hero {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: linear-gradient(135deg, #0b0c10 0%, #1f2833 100%);
+}
+
+.hero h2 {
+  font-size: 2.5rem;
+  color: #66fcf1;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  color: #c5c6c7;
+}
+
+.events {
+  padding: 3rem 2rem;
+}
+
+.events h2 {
+  text-align: center;
+  color: #66fcf1;
+  margin-bottom: 2rem;
+}
+
+.event-card {
+  background-color: #1f2833;
+  border: 2px solid #45a29e;
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 0 10px rgba(69, 162, 158, 0.2);
+}
+
+.event-card h3 {
+  color: #ffffff;
+  margin-top: 0;
+}
+
+.event-card p {
+  color: #c5c6c7;
+}
+
+.event-card a {
+  display: inline-block;
+  margin-top: 1rem;
+  color: #66fcf1;
+  text-decoration: none;
+  border: 1px solid #66fcf1;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  transition: background 0.3s, color 0.3s;
+}
+
+.event-card a:hover {
+  background-color: #66fcf1;
+  color: #0b0c10;
+}
+
+footer {
+  text-align: center;
+  padding: 2rem;
+  background-color: #1f2833;
+  color: #c5c6c7;
+  border-top: 2px solid #45a29e;
+}
+#homepage{
+    color: #ffffff;
+    font-size: 15px;
+}
+.Admin{
+  color: hsl(0, 99%, 41%);
+}
+.headstaff{
+  color: orange;
+}
+.staff{
+  color: yellow;
+  padding-left: 0;
+}
+ul{
+  font-size: 20px;
+}
+
+span{
+  padding-left: 2px;
+}
+
+
+
+
+
+
+.discord-stats {
+  background: #1f2833;
+  border: 2px solid #45a29e;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin: 2rem auto;
+  max-width: 400px;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(69, 162, 158, 0.3);
+}
+
+.discord-stats h2 {
+  color: #66fcf1;
+  margin-bottom: 1rem;
+}
+
+.discord-stats p {
+  color: #c5c6c7;
+  font-size: 1.1rem;
+  margin: 0.5rem 0;
+}
