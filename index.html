@@ -1,71 +1,104 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Home - PMUK&IR</title>
-  <link rel="stylesheet" href="assets/css/style.css" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>UK-IR PUBG Community</title>
   <link rel="icon" href="assets/images/IMG_6841-compressed.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Poppins:wght@600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
 </head>
+
 <body>
-  <header>
-    <div class="logo">
-      <img src="assets/images/IMG_6841-compressed.png" alt="Server Logo" />
-      <h1>UK PUBG Mobile Events</h1>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <!-- simple text logo -->
+        <span class="brand-mark">UK-IR</span>
+        <span class="brand-text">PUBG Community</span>
+      </a>
+
+      <nav class="nav" id="main-nav" aria-label="Main navigation">
+        <ul class="nav-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-cta">
+        <a class="btn btn-primary" href="#">Discord</a>
+      </div>
+
+      <button class="nav-toggle" id="nav-toggle" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
+        <svg width="22" height="14" viewBox="0 0 22 14" fill="none" aria-hidden="true"><path d="M1 1h20M1 7h20M1 13h20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
     </div>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="events.html">Events</a>
-      <a href="about.html">About</a>
-      <a href="https://discord.gg/RxrfwjX3Ua" target="_blank">Join Discord</a>
-    </nav>
   </header>
 
-  <section class="hero">
-    <h2>Welcome to the UK&IR PUBG Mobile Community</h2>
-    <p>Where top fraggers from whole around the world compete!</p>
-  </section>
+  <main>
+    <section class="hero">
+      <div class="container hero-inner">
+        <div>
+          <h1>UK & Ireland PUBG Community — Events, Prizes, Highlights</h1>
+          <p class="lead">Monthly events, community giveaways and tournament highlights. Join the Discord to register.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#">Join Discord</a>
+            <a class="btn btn-ghost" href="events.html">See Events</a>
+          </div>
+        </div>
+        <div class="hero-image">
+          <img src="assets/images/IMG_6841-compressed.png" alt="Event sample">
+        </div>
+      </div>
+    </section>
 
-  <section id="events" class="events">
+    <section class="events-preview container">
+      <div class="section-head">
+        <h2>Upcoming Events</h2>
+        <p>Hot tournaments and community nights — updated regularly.</p>
+      </div>
+      <div id="eventsGrid" class="events-grid" aria-live="polite"></div>
+    </section>
 
-    <!-- You can copy the event-card div for more events -->
-  </section>
+    <section id="about-preview" class="container about-preview">
+      <h3>About the Community</h3>
+      <p>We host monthly events across the UK & Ireland for PUBG Mobile players — casual and competitive. Friendly rules, clear prizes, and community-first vibes.</p>
+    </section>
+  </main>
 
-
-
-  <!-- You can copy the event-card div for more events -->
-  </section>
-
-  <section class="discord-stats">
-  <h2>Live Discord Stats</h2>
-  <p id="online-count">🟢 Online: Loading...</p>
-  <p id="total-count">👥 Total: Loading...</p>
-  <p id="total-count">👥 Total Members (overall members): 19440</p>
-</section>
-<!--discord live feed -->
-<script>
-  async function loadDiscordStats() {
-    const res = await fetch("https://discordapp.com/api/guilds/1079837844681539724/widget.json");
-    const data = await res.json();
-
-    // Online count comes from presence_count
-    document.getElementById("online-count").textContent = `🟢 Online: ${data.presence_count}`;
-
-    // Total count = online + offline (approximate from member_count, if present)
-    if (data.members) {
-      document.getElementById("total-count").textContent = `👥 Total Members (online shown only): ${data.members.length}`;
-    } else {
-      document.getElementById("total-count").textContent = "👥 Total Members: Not available in widget";
-    }
-  }
-
-  loadDiscordStats();
-  setInterval(loadDiscordStats, 30000); // refresh every 30 seconds
-</script>
-
-
-  <footer>
-    <p>&copy; 2025 UK&IR PUBG Mobile Discord Server</p>
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <strong>UK-IR PUBG</strong>
+        <p>Community-run events for UK & Ireland PUBG Mobile players.</p>
+      </div>
+      <div>
+        <h4>Quick links</h4>
+        <ul class="footer-links">
+          <li><a href="events.html">Events</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <p>Discord: <a href="#">invite-link</a></p>
+        <p>Email: <a href="mailto:admin@example.com">admin@example.com</a></p>
+      </div>
+    </div>
+    <div class="copyright">
+      <div class="container">© <span id="year"></span> UK-IR PUBG • Built with community ❤️</div>
+    </div>
   </footer>
+
+  <script src="assets/js/main.js" defer></script>
+
 </body>
+
 </html>
