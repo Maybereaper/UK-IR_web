@@ -4,13 +4,14 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>About — UK-IR PUBG Community</title>
+  <title>About — UK&IR PUBG Community</title>
   <link rel="icon" href="assets/images/IMG_6841-compressed.png">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Poppins:wght@600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body>
+  <div class="toast-container" id="toast-container"></div>
     <header class="site-header">
     <div class="container header-inner">
       <a class="brand" href="index.html">
@@ -28,6 +29,12 @@
       </nav>
 
       <div class="header-cta">
+        <div class="theme-toggle-wrapper">
+          <label class="toggle">
+            <input type="checkbox" id="theme-toggle-input" aria-label="Toggle dark mode">
+            <span class="slider"></span>
+          </label>
+        </div>
         <a class="btn btn-primary" href="https://discord.gg/RxrfwjX3Ua">Discord</a>
       </div>
 
@@ -39,8 +46,36 @@
 
   <!-- your about content -->
   <main class="container">
-    <h1>About Us</h1>
-    <p>Short description about the community, rules, organizers, and how to contribute.</p>
+    <div class="reveal">
+      <h1>About Us</h1>
+      <p>Welcome to the UK & Ireland PUBG Mobile Community! We're a passionate group of players who organize monthly tournaments, casual gaming nights, and community events across the UK and Ireland.</p>
+    </div>
+    
+    <div class="reveal" style="margin-top: 2rem;">
+      <h2>Our Mission</h2>
+      <p>To bring together PUBG Mobile players from across the UK and Ireland, providing a friendly competitive environment with fair rules, exciting prizes, and unforgettable gaming experiences.</p>
+    </div>
+    
+    <div class="reveal" style="margin-top: 2rem;">
+      <h2>Community Guidelines</h2>
+      <ul>
+        <li>🎮 Fair play and sportsmanship at all times</li>
+        <li>🤝 Respect for all community members</li>
+        <li>🏆 Competitive integrity in all tournaments</li>
+        <li>💬 Active participation in Discord discussions</li>
+        <li>🎯 Supporting fellow players and newcomers</li>
+      </ul>
+    </div>
+    
+    <div class="reveal" style="margin-top: 2rem;">
+      <h2>Join Us Today!</h2>
+      <p>Ready to be part of the action? Join our Discord community and participate in upcoming events!</p>
+      <div class="discord-stats" id="discord-stats" style="margin: 1rem 0;">
+        <div class="status-dot"></div>
+        <span id="member-count">Loading...</span> members online
+      </div>
+      <a class="btn btn-primary" href="https://discord.gg/RxrfwjX3Ua">Join Discord Community</a>
+    </div>
   </main>
 
    <footer class="site-footer">

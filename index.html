@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>UK-IR PUBG Community</title>
+  <title>UK&IR PUBG Community</title>
   <link rel="icon" href="assets/images/IMG_6841-compressed.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,6 +13,7 @@
 </head>
 
 <body>
+  <div class="toast-container" id="toast-container"></div>
 
   <header class="site-header">
     <div class="container header-inner">
@@ -32,6 +33,12 @@
       </nav>
 
       <div class="header-cta">
+        <div class="theme-toggle-wrapper">
+          <label class="toggle">
+            <input type="checkbox" id="theme-toggle-input" aria-label="Toggle dark mode">
+            <span class="slider"></span>
+          </label>
+        </div>
         <a class="btn btn-primary" href="https://discord.gg/RxrfwjX3Ua">Discord</a>
       </div>
 
@@ -43,27 +50,63 @@
 
   <main>
     <section class="hero">
+      <div class="hero-particles">
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+      </div>
       <div class="container hero-inner">
-        <div>
+        <div class="reveal-left">
           <h1>UK & Ireland PUBG Community — Events, Prizes, Highlights</h1>
           <p class="lead">Monthly events, community giveaways and tournament highlights. Join the Discord to register.</p>
+          <div class="discord-stats" id="discord-stats">
+            <div class="status-dot"></div>
+            <span id="member-count">Loading...</span> members online
+          </div>
           <div class="hero-actions">
             <a class="btn btn-primary" href="https://discord.gg/RxrfwjX3Ua">Join Discord</a>
             <a class="btn btn-ghost" href="events.html">See Events</a>
           </div>
         </div>
-        <div class="hero-image">
+        <div class="hero-image reveal-right">
           <img src="assets/images/IMG_6841-compressed.png" alt="Event sample">
         </div>
       </div>
     </section>
 
-    <section class="events-preview container">
+    <section class="events-preview container reveal">
       <div class="section-head">
         <h2>Upcoming Events</h2>
         <p>Hot tournaments and community nights — updated regularly.</p>
       </div>
+      <div class="events-controls">
+        <div class="search-box">
+          <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <circle cx="11" cy="11" r="8"></circle>
+            <path d="m21 21-4.35-4.35"></path>
+          </svg>
+          <input type="text" class="search-input" placeholder="Search events..." id="event-search">
+        </div>
+        <div class="filter-dropdown">
+          <select class="filter-select" id="prize-filter">
+            <option value="">All Prizes</option>
+            <option value="50">50+ UC</option>
+            <option value="100">100+ UC</option>
+            <option value="200">200+ UC</option>
+          </select>
+        </div>
+        <button class="clear-filters" id="clear-filters">Clear</button>
+      </div>
       <div id="eventsGrid" class="events-grid" aria-live="polite"></div>
+      <div id="no-events" class="text-center" style="display: none; padding: 2rem; color: var(--muted);">
+        <p>No events found matching your criteria.</p>
+      </div>
     </section>
 
     <section id="about-preview" class="container about-preview">

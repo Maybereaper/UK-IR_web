@@ -3,13 +3,14 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Events — UK-IR PUBG Community</title>
+  <title>Events — UK&IR PUBG Community</title>
   <link rel="icon" href="assets/images/IMG_6841-compressed.png">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Poppins:wght@600;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body>
+  <div class="toast-container" id="toast-container"></div>
 
    <header class="site-header">
     <div class="container header-inner">
@@ -28,6 +29,12 @@
       </nav>
 
       <div class="header-cta">
+        <div class="theme-toggle-wrapper">
+          <label class="toggle">
+            <input type="checkbox" id="theme-toggle-input" aria-label="Toggle dark mode">
+            <span class="slider"></span>
+          </label>
+        </div>
         <a class="btn btn-primary" href="https://discord.gg/RxrfwjX3Ua">Discord</a>
       </div>
 
@@ -38,9 +45,36 @@
   </header>
   
   <main class="container">
-    <h1>All Events</h1>
-    <p>Browse current and past tournaments hosted by the UK-IR PUBG Community.</p>
-    <div id="eventsGrid" class="events-grid"></div>
+    <div class="reveal">
+      <h1>All Events</h1>
+      <p>Browse current and past tournaments hosted by the UK-IR PUBG Community.</p>
+    </div>
+    
+    <div class="reveal" style="margin-top: 1rem;">
+      <div class="events-controls">
+        <div class="search-box">
+          <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <circle cx="11" cy="11" r="8"></circle>
+            <path d="m21 21-4.35-4.35"></path>
+          </svg>
+          <input type="text" class="search-input" placeholder="Search events..." id="event-search">
+        </div>
+        <div class="filter-dropdown">
+          <select class="filter-select" id="prize-filter">
+            <option value="">All Prizes</option>
+            <option value="50">50+ UC</option>
+            <option value="100">100+ UC</option>
+            <option value="200">200+ UC</option>
+          </select>
+        </div>
+        <button class="clear-filters" id="clear-filters">Clear</button>
+      </div>
+      
+      <div id="eventsGrid" class="events-grid"></div>
+      <div id="no-events" class="text-center" style="display: none; padding: 2rem; color: var(--muted);">
+        <p>No events found matching your criteria.</p>
+      </div>
+    </div>
   </main>
 
    <footer class="site-footer">

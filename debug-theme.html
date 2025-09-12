@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Theme Debug</title>
+</head>
+<body>
+    <h1>Theme Debug Tool</h1>
+    <p>Current theme in localStorage: <span id="current-theme">-</span></p>
+    <p>Document data-theme: <span id="document-theme">-</span></p>
+    
+    <button onclick="clearTheme()">Clear Saved Theme</button>
+    <button onclick="setLight()">Force Light Mode</button>
+    <button onclick="setDark()">Force Dark Mode</button>
+    
+    <script>
+        function updateStatus() {
+            document.getElementById('current-theme').textContent = localStorage.getItem('theme') || 'none';
+            document.getElementById('document-theme').textContent = document.documentElement.getAttribute('data-theme') || 'none';
+        }
+        
+        function clearTheme() {
+            localStorage.removeItem('theme');
+            document.documentElement.removeAttribute('data-theme');
+            updateStatus();
+            alert('Theme cleared! Now go back to your website and it should default to light mode.');
+        }
+        
+        function setLight() {
+            localStorage.setItem('theme', 'light');
+            document.documentElement.removeAttribute('data-theme');
+            updateStatus();
+            alert('Light mode set!');
+        }
+        
+        function setDark() {
+            localStorage.setItem('theme', 'dark');
+            document.documentElement.setAttribute('data-theme', 'dark');
+            updateStatus();
+            alert('Dark mode set!');
+        }
+        
+        updateStatus();
+    </script>
+</body>
+</html>
